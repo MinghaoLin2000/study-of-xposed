@@ -183,3 +183,4 @@ public class HookConstructors implements IXposedHookLoadPackage {
     }
 }
 ```
+4. 开始编译xposed的app模块，然后在edxposed中勾选上该功能模块，重启后，查看log日志，效果就出来了，有一说一真麻烦，每次修改都得重启）
