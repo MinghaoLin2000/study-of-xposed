@@ -8,7 +8,8 @@
 compile fileTree(include:['*.ar'],dir:'libs')
 替换成  
 provided fileTree(include:['*.jar'],dir:'libs')  
-如果使用compile,可以正常编译生成插件apk，但是当安装到手机上后，xposed会报错，无法正常工作
+如果使用compile,可以正常编译生成插件apk，但是当安装到手机上后，xposed会报错，无法正常工作，另外没有
+以上的xposedBridgeApi.jar这个文件，也可以使用这种方式，gradle直接导入依赖，即在app目录下的build.gradle文件中的dependencies字段中，加入provided 'de.robv.android.xposed:api:82'，sync同步下，就ok了  
 2. 修改AndroidManifest.xml文件，在Application标签下增加内容如下:  
 \<meta-data android:name="xposedmodule" android:value='true'/>  //是否配置为xposed插件，设置为true  
 \<meta-data android:name="xposeddescription" android:value="模块描述"/> //模块名称  
